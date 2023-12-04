@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Pets",
+    "description": "Manage your pets",
+    "category": "Utilities",
+    "href": "/pets"
+  },
+  {
+    "name": "YouTube Bookmarks",
+    "description": "Bookmark your favorite YouTube videos along with timestamps",
+    "category": "Music",
+    "href": "/youtube-bookmarks"
+  },
+  {
+    "name": "Speech Recognition",
+    "description": "Transcribe audio to text live",
+    "category": "Utilities, Language Learning",
+    "href": "/speech-recognition"
+  },
+  {
+    "name": "Storage",
+    "description": "Upload files for use by our other services or just for storage",
+    "category": "Utilities",
+    "href": "/storage"
+  },
+  {
+    "name": "Expense Management",
+    "description": "Track and manage your expenses",
+    "category": "Finance",
+    "href": "/expense-management"
+  },
+  {
+    "name": "Time Management",
+    "description": "Track and manage your time",
+    "category": "Productivity",
+    "href": "/time-management"
+  },
+  {
+    "name": "Novels",
+    "description": "Translate and read Japanese novels from sites like Syosetu, Pixiv, and Kakuyomu",
+    "category": "Language Learning",
+    "href": "/novels"
+  },
+  {
+    "name": "Flashcards",
+    "description": "Create and study Japanese flashcards using spaced repetition",
+    "category": "Language Learning",
+    "href": "/flashcards"
+  }
+]

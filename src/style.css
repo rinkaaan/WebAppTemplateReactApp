@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+    overscroll-behavior-y: none;
+}
+
+#b #h {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+}

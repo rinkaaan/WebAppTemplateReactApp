@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: '/pets',
-            lazy: () => import('./routes/pets/AllPetsRoute.jsx'),
+            lazy: () => import('./routes/pets/AllPetsRoute.tsx'),
           },
           {
             path: '/pets/:petId',

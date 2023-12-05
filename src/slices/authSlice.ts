@@ -1,6 +1,5 @@
 import Cookies from 'js-cookie'
-import type { User } from '../../openapi-client'
-import { OpenAPI, UserService } from '../../openapi-client'
+import { OpenAPI, User, UserService } from '../../openapi-client';
 
 export interface AuthSlice {
   isAuthenticated: boolean
@@ -31,7 +30,6 @@ export const authSlice: AuthSlice = {
       if (!authSlice.isAuthenticated) return
       try {
         authSlice.user = await UserService.get()
-        console.log('user', authSlice.user)
       } catch (e) {
         await this.logout()
       }

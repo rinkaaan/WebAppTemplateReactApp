@@ -1,7 +1,4 @@
-import SpaceBetween from '@cloudscape-design/components/space-between'
-import Button from '@cloudscape-design/components/button'
 import { Container, ContentLayout, Header, TextContent } from '@cloudscape-design/components'
-import { Form } from 'react-router-dom'
 
 export function Component() {
   return (

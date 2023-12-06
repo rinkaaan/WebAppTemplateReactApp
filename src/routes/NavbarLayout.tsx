@@ -1,10 +1,10 @@
-import { TopNavigation, TopNavigationProps } from '@cloudscape-design/components';
-import logo from "../assets/logo.svg"
-import CloudInput from "../components/CloudInput.tsx"
-import { Outlet, useNavigate } from "react-router-dom"
-import { AuthSlice, authSlice } from '../slices/authSlice.ts';
-import { createPortal } from "react-dom"
-import { Fragment, ReactNode } from 'react';
+import { TopNavigation, TopNavigationProps } from '@cloudscape-design/components'
+import logo from '../assets/logo.svg'
+import CloudInput from '../components/CloudInput.tsx'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { AuthSlice, authSlice } from '../slices/authSlice.ts'
+import { createPortal } from 'react-dom'
+import { Fragment, ReactNode } from 'react'
 
 const profileActions = [
   { id: "profile", text: "Profile" },
@@ -65,10 +65,10 @@ function getUtilities(authSlice: AuthSlice) {
       iconName: 'user-profile',
       items: profileActions
     }
-  ];
+  ]
 
   if (authSlice.isAuthenticated) {
-    return utilities;
+    return utilities
   }
 }
 

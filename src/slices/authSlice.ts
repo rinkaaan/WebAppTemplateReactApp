@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie'
-import { OpenAPI, User, UserService } from '../../openapi-client';
+import { OpenAPI, User, UserService } from '../../openapi-client'
 
 export interface AuthSlice {
   isAuthenticated: boolean

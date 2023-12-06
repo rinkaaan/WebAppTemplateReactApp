@@ -4,7 +4,7 @@ import {
   Popover,
   SpaceBetween,
 } from '@cloudscape-design/components'
-import { PopoverText } from '../../components/PopoverText.jsx';
+import { PopoverText } from '../../components/PopoverText.jsx'
 
 const topCosts: ReadonlyArray<{
   service: string

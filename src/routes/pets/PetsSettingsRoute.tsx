@@ -10,7 +10,7 @@ export function Component() {
       }
     >
       <Container
-        header={<Header variant='h2'>Yuki, My Cat</Header>}
+        header={<Header variant='h2'>Settings</Header>}
       >
         <TextContent>
           <p>

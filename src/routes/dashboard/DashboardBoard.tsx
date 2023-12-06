@@ -9,7 +9,7 @@ import {
 } from "routes/dashboard/i18n-strings"
 import { v4 } from "uuid"
 import { useState } from "react"
-import { StoredWidgetPlacement } from './interfaces.ts';
+import { StoredWidgetPlacement } from './interfaces.ts'
 
 export default function DashboardBoard() {
   const [items, setItems] = useState<

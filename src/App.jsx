@@ -37,22 +37,46 @@ const router = createBrowserRouter([
         Component: PetsLayout,
         loader: ensureAuthenticatedLoader,
         handle: {
-          crumb: () => "Pets",
+          // crumb: () => "Pets",
+          crumbs: () => {
+            return {
+              crumb: "Pets",
+              title: "Pets",
+              path: "/pets/all",
+            }
+          }
         },
         children: [
           {
-            path: '/pets',
+            path: '/pets/all',
             lazy: () => import('./routes/pets/AllPetsRoute.tsx'),
           },
           {
-            path: '/pets/:petId',
-            lazy: () => import('./routes/pets/PetDetailsRoute.jsx'),
+            path: '/pets/details/:petId',
+            lazy: () => import('./routes/pets/PetDetailsRoute.tsx'),
             handle: {
-              crumb: () => "Pet details",
+              // crumb: () => "Pet details",
+              crumbs: () => {
+                return {
+                  crumb: "Pet details",
+                  title: "Pet Details",
+                }
+              }
             },
           },
           {
-            path: 'settings',
+            path: '/pets/settings',
+            lazy: () => import('./routes/pets/PetsSettingsRoute.tsx'),
+            handle: {
+              // crumb: () => "Pet settings",
+              crumbs: () => {
+                return {
+                  crumb: "Pet settings",
+                  title: "Pet Settings",
+                  path: "/pets/settings",
+                }
+              }
+            },
           }
         ],
       },

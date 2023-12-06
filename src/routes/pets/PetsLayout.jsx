@@ -1,12 +1,13 @@
 import { AppLayout, SideNavigation } from '@cloudscape-design/components'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Navigate, Outlet, useLocation, useMatches, useNavigate } from 'react-router-dom'
 import Breadcrumbs from './BreadCrumbs.jsx'
+import { useEffect, useState } from 'react'
 
 const items = [
   {
     type: 'link',
     text: 'Pets',
-    href: '/pets',
+    href: '/pets/all',
   },
   {
     type: 'link',
@@ -36,37 +37,46 @@ const items = [
 export default function PetsLayout() {
   const location = useLocation()
   const navigate = useNavigate()
+  const matches = useMatches()
+  const crumbs = matches
+    .filter((match) => Boolean(match.handle?.crumbs))
+    .map((match) => match.handle.crumbs())
+  const [activeHref, setActiveHref] = useState()
 
-  function activeHref() {
-    // While location.pathname is not in items, remove the last part of the pathname
-    while (!items.find(item => item.href === location.pathname)) {
-      const parts = location.pathname.split('/')
-      parts.pop()
-      location.pathname = parts.join('/')
-    }
-
-    return location.pathname
-  }
-
-  return (
-    <AppLayout
-      navigation={
-        <SideNavigation
-          header={{
-            text: 'Pets',
-            href: '/pets',
-          }}
-          onFollow={e => {
-            e.preventDefault()
-            navigate(e.detail.href)
-          }}
-          activeHref={activeHref()}
-          items={items}
-        />
+  useEffect(() => {
+    // Go from last to first crumb, set activeHref to the first one that matches items
+    for (const crumb of crumbs.reverse()) {
+      if (crumb.path == null) continue
+      if (items.find(item => item.href === crumb.path)) {
+        setActiveHref(crumb.path)
+        break
       }
-      content={<Outlet/>}
-      breadcrumbs={<Breadcrumbs/>}
-      toolsHide
-    />
-  )
+    }
+  }, [crumbs])
+
+  if (location.pathname !== '/pets') {
+    return (
+      <AppLayout
+        navigation={
+          <SideNavigation
+            header={{
+              text: 'Pets',
+              href: '/pets/all',
+            }}
+            onFollow={e => {
+              e.preventDefault()
+              navigate(e.detail.href)
+            }}
+            activeHref={activeHref}
+            items={items}
+          />
+        }
+        content={<Outlet/>}
+        breadcrumbs={<Breadcrumbs/>}
+        toolsHide
+      />
+    )
+  } else {
+    return <Navigate to='/pets/all' replace={true} />
+  }
 }

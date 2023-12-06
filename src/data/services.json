@@ -3,7 +3,7 @@
     "name": "Pets",
     "description": "Manage your pets",
     "category": "Utilities",
-    "href": "/pets"
+    "href": "/pets/all"
   },
   {
     "name": "YouTube Bookmarks",

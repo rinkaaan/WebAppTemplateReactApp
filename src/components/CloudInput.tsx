@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Input, InputProps } from '@cloudscape-design/components';
+import { useState } from 'react'
+import { Input, InputProps } from '@cloudscape-design/components'
 
 interface CloudInputProps extends Omit<InputProps, 'value'> {
   value?: string

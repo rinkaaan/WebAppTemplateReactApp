@@ -32,7 +32,7 @@ export function Component() {
                 {
                   type: 'link',
                   text: 'Dashboard',
-                  href: '/pets',
+                  href: '/pets/all',
                 },
                 {
                   type: 'link',

@@ -1,6 +1,6 @@
-import { AppLayout, ContentLayout } from '@cloudscape-design/components';
-import DashboardHeader from './DashboardHeader.jsx';
-import DashboardBoard from './DashboardBoard.tsx';
+import { AppLayout, ContentLayout } from '@cloudscape-design/components'
+import DashboardHeader from './DashboardHeader.jsx'
+import DashboardBoard from './DashboardBoard.tsx'
 import { ensureAuthenticated } from '../../common/typedUtils.ts'
 
 export async function loader({ request }) {
